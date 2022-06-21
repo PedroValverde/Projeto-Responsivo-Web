@@ -59,7 +59,7 @@
                         <li><a href="#">Schedule</a></li>
                         <li class="search">
                             <div class="input-group">
-                                <input type="search" placeholder="search">
+                                <input type="search" placeholder="search" id="input-search">
                                 <span class="input-group-btn">
                                     <button class="" type="button"><i class="fa fa-search"></i></button>
                                 </span>
@@ -183,7 +183,7 @@
                             <div class="col-md-4 col-get-in-touch">
                                 <h4>GET IN TOUCH</h4>
                                 <address>
-                                    <i class="fa fa-map-marker"></i><span> 618 E. South Street, Suite 510<br/>
+                                    <i class="fa fa-map-marker"></i><span> 618 E. South Street, Suite 510<br />
                                         Orlando, FL 32801</span>
                                 </address>
                                 <p><a href="tel:1.855.ORL.CITY"><i class="fa fa-phone"></i>1.855.ORL.CITY</a></p>
@@ -202,12 +202,12 @@
                                     </li>
                                 </ul>
                             </div>
-                            </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
+        </div>
         </div>
         <div class="row row-cinza-escuro">
             <div class="container">
@@ -220,6 +220,24 @@
     <script src="lib/jquery/jquery.min.js"></script>
     <!-- <script src="lib/jquery1/jquery.min.js"></script> -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#logotipo').on("mouseover", function () {
+                $("#banner h1").addClass('efeito');
+
+            }).on('mouseout', function () {
+
+                $('#banner h1').removeClass('efeito');
+            });
+
+            $('#input-search').on('focus', function(){
+                $('li.search').addClass("ativo");
+            }).on('blur', function(){
+                $('li.search').removeClass('ativo');
+            });
+        });
+
+    </script>
 </body>
 
 </html>
