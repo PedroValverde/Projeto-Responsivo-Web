@@ -1,0 +1,33 @@
+/* Tamanho padrão para tablets */
+@media only screen and (max-width: 768px){
+    .header-black ul{
+        display: none;
+    }
+}
+
+/* Tamanho padrão para smarthphones */
+@media only screen and (max-width: 480px){
+    .header-black ul, #menu{
+        display: none;
+    }
+    #logotipo{
+        left: 32%;
+    }
+    #btn-bars, #btn-search{
+        color: #fff;
+        font-size: 22px;
+        position: absolute;
+        top: 4px;
+        background: none;
+        border: none;
+        display: block;
+    }
+    #btn-bars{
+        left: 4px;
+
+    }
+    #btn-search{
+        right: 4px;
+
+    }
+}

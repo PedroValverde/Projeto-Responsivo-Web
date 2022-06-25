@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="tuf-8">
+    <meta name="viewport" content="width:device-width, initial-scale=1">
     <title> Orlando City </title>
     <!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="lib/bootstrap/css1/bootstrap.min.css">
@@ -11,13 +12,14 @@
     <link rel="stylesheet" href="lib/owlcarousel2/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/orlando.css">
+    <link rel="stylesheet" href="css/orlando-mobile.css">
 
 
 </head>
 
 <body>
     <header>
-        <div class="container">
+        <div class="container container-logo">
             <img id="logotipo" src="img/orlando-logo.png" alt="Logotipo">
         </div>
 
@@ -85,8 +87,11 @@
                     <hr>
                 </div>
                 <div class="row">
-                    <div class="video">
-                        <video src="mp4/highlights.mp4" controls poster="img/highlights.jpg"></video>
+                    <div class="player">
+                        <video src="mp4/highlights.mp4" controls poster="img/highlights.jpg">
+                            <track kind="subtitles" label="Português (Brasil)" src="vtt/legendas.vtt"
+                             srclang="pt-br" default>
+                        </video>
                     </div>
                     <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
 
@@ -239,7 +244,7 @@
                 $(this).toggleClass("btn-success btn-danger");
             });
 
-            plyr.setup(); 
+            plyr.setup();
 
         });
 
