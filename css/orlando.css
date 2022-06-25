@@ -221,9 +221,12 @@ header #logotipo{
 }
 #news .thumbnails .item-inner{
     padding: 10px;
+    text-align: center;
 }
 #news .thumbnails .item-inner img{
     width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 #estatiticas {
     background-color: #5E299A;
@@ -291,13 +294,14 @@ footer{
 }
 footer .row{
     width: 100%;
+    margin-left:0;
 }
 footer .row p{
     line-height: 55px;
     margin-bottom: 0;
 }
 footer .row-cinza-claro{
-    height: 200px;
+    height: 240px;
     background-color: #171f26;
 }
 footer .row-cinza-escuro{
@@ -405,5 +409,14 @@ video {
     width: 60%;
 }
 #btn-bars, #btn-search{
-    display:none;
+    display: none;
+}
+#btn-news-prev, #btn-news-next{
+    display: none;
+}
+#rowbtns{
+    display: none;
+}
+.page-up{
+    display: none!important;
 }

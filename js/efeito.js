@@ -30,4 +30,27 @@ $(document).ready(function () {
 
         }
     });
+    var owl = $(".thumbnails").data('owlCarousel');
+
+    $('#btn-news-prev').on('click', function(){
+
+        owl.prev();
+
+    });
+
+    $('#btn-news-next').on('click', function(){
+
+        owl.next();
+
+    });
+
+    $("#page-up").on("click", function(event){
+
+        $("body").animate({
+            scrollTop:0,
+        }, 1000);
+        
+        event.preventDefault();
+     
+    });
 });
