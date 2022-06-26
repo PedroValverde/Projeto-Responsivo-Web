@@ -12,23 +12,26 @@ $(document).ready(function () {
     }).on('blur', function () {
         $('li.search').removeClass('ativo');
     });
-    $(".thumbnails").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: false,
-        navText: ["Next", "Back"],
-        responsive: {
-            0: {
-                items: 1
-            },
-            480: {
-                items: 3
-            },
-            1200: {
-                items: 4
-            }
 
-        }
+    $(".thumbnails").owlCarousel({
+        // loop: true,
+        // margin: 10,
+        // nav: false,
+        // navText: ["Next", "Back"],
+        // responsive: {
+        //     0: {
+        //         items: 1
+        //     },
+        //     480: {
+        //         items: 3
+        //     },
+        //     1200: {
+        //         items: 4
+        //     }
+
+        // }
+        items:4,
+        margin :10  
     });
     var owl = $(".thumbnails").data('owlCarousel');
 

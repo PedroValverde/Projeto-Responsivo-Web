@@ -42,6 +42,30 @@
                     <h3>Orlando City Foundation 2015</h3>
                 </div>
             </div>
+            <div class="item" data-video="highlights">
+                <div class="item-inner">
+                    <img src="img/highlights.jpg" alt="Notica">
+                    <h3>Highlights</h3>
+                </div>
+            </div>
+            <div class="item" data-video="Orlando_City_Foundation_2015">
+                <div class="item-inner">
+                    <img src="img/Orlando_City_Foundation_2015.jpg" alt="Notica">
+                    <h3>Orlando City Foundation 2015</h3>
+                </div>
+            </div>
+            <div class="item" data-video="highlights">
+                <div class="item-inner">
+                    <img src="img/highlights.jpg" alt="Notica">
+                    <h3>Highlights</h3>
+                </div>
+            </div>
+            <div class="item" data-video="Orlando_City_Foundation_2015">
+                <div class="item-inner">
+                    <img src="img/Orlando_City_Foundation_2015.jpg" alt="Notica">
+                    <h3>Orlando City Foundation 2015</h3>
+                </div>
+            </div>
 
         </div>
     </div>

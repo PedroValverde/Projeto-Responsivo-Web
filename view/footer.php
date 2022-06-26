@@ -83,47 +83,11 @@
 </footer>
 
 <script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/owlcarousel2/dist/owl.carousel.min.js"></script>
+<script src="lib/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
+<!-- <script src="lib/owlcarousel2/dist/owl.carousel.min.js"></script> -->
 <!-- <script src="lib/jquery1/jquery.min.js"></script> -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/raty/lib/jquery.raty.js"></script>
 <script src="js/efeito.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#logotipo').on("mouseover", function() {
-            $("#banner h1").addClass('efeito');
-
-        }).on('mouseout', function() {
-
-            $('#banner h1').removeClass('efeito');
-        });
-
-        $('#input-search').on('focus', function() {
-            $('li.search').addClass("ativo");
-        }).on('blur', function() {
-            $('li.search').removeClass('ativo');
-        });
-        $(".thumbnails").owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: false,
-            navText: ["Next", "Back"],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 3
-                },
-                1200: {
-                    items: 4
-                }
-
-            }
-        });
-
-
-    });
-</script>
 </body>
-
 </html>

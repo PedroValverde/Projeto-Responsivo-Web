@@ -20,38 +20,23 @@ require 'inc/Slim-2.x/Slim/Slim.php';
  * of setting names and values into the application constructor.
  */
 $app = new \Slim\Slim();
-
-/**
- * Step 3: Define the Slim application routes
- *
- * Here we define several Slim application routes that respond
- * to appropriate HTTP request methods. In this example, the second
- * argument for `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
- * is an anonymous function.
- */
-
 // GET route
 $app->get(
     '/',
     function () {
         require_once ("view/index.php");
-        
     }
 );
 $app->get(
     '/videos',
     function () {
         require_once ("view/videos.php");
-        
     }
 );
-
-
-
-/**
- * Step 4: Run the Slim application
- *
- * This method should be called last. This executes the Slim application
- * and returns the HTTP response to the HTTP client.
- */
+$app->get(
+    '/shop',
+    function () {
+        require_once ("view/shop.php");
+    }
+);
 $app->run();
