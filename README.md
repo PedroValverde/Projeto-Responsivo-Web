@@ -1,2 +1,2 @@
-# Projeto-Responsivo-Web
-Projeto Responsivo Web Desenvolvido como a conclusão de um curso ExtraCurricular. Onde Utilizei HTML5, CSS e BootStrap para estruturar o site e JavaScript e JQuery para aplicar efeitos no site e a adicionar interação.
+# Projeto-Responsivo-Web-Com-Loja-Virtual
+Projeto Responsivo Com Loja Virtual Web Desenvolvido como a conclusão de um curso ExtraCurricular. Onde Utilizei HTML5, CSS e BootStrap para estruturar o site e JavaScript e JQuery para aplicar efeitos no site e a adicionar interação. Utilizei PHP com Slim FrameWork para configurar a LojaVirtual, MySQl para formular e manipular o banco de dados. Angularjs para fazer as requisições e conexão com banco de dados

@@ -439,6 +439,13 @@ video {
 #destaque-produto .col-imagem {
     text-align: center;
 }
+#destaque-produto .col-imagem img{
+    max-width:100%;
+    max-height: 250px;
+}
+#destaque-produto .item{
+    display: inline-block;
+}
 #destaque-produto .col-descricao h2 {
     font-family: arial;
     font-size: 20px;
