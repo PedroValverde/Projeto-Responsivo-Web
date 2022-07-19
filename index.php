@@ -41,6 +41,7 @@ $app->get(
         require_once("view/shop.php");
     }
 );
+
 $app->get(
     '/produtos',
     function () {
@@ -131,9 +132,128 @@ $app->get('/produto-:id_prod', function($id_prod){
     $produto['total'] = number_format($preco, 2, ",", ".");
 
      require_once("view/shop-produto.php");
+});
 
-     
+$app->get(
+    '/cart',
+    function () {
+        require_once("view/cart.php");
+    }
+);
+$app -> get("/carrinho-dados", function(){
+    
+    $sql = new Sql();
 
+    $result = $sql -> select("CALL sp_carrinhos_get('".session_id()."')");
+
+    $carrinho = $result[0];
+
+    $sql = new Sql();
+
+    $carrinho['produtos'] = $sql -> select("CALL sp_carrinhosprodutos_list('".$carrinho['id_car']."')");
+
+    $carrinho['total_car'] = number_format((float)$carrinho['total_car'],2,",",".");
+    $carrinho['subtotal_car'] = number_format((float)$carrinho['subtotal_car'],2,",",".");
+    $carrinho['frete_car'] = number_format((float)$carrinho['frete_car'],2,",",".");
+
+  
+    
+
+    echo json_encode($carrinho);
+});
+
+// $app-> post('/carrinho', function(){
+//     $request_body = json_decode(file_get_contents('php://input'), true);
+
+//     var_dump($request_body);
+// });
+
+$app -> get('/carrinhoAdd-:id_prod', function($id_prod){
+    $sql = new Sql();
+
+    $result = $sql -> select("CALL sp_carrinhos_get('".session_id()."')");
+
+    $carrinho = $result[0];
+    
+    $sql = new Sql();
+
+    $sql -> query("CALL sp_carrinhosprodutos_add(".$carrinho['id_car'].", ".$id_prod.")");
+
+    header("location: cart");
+    exit;
+});
+$app-> delete("/carrinhoRemoveAll-:id_prod", function($id_prod){
+
+    $sql = new Sql();
+
+    $result = $sql -> select("CALL sp_carrinhos_get('".session_id()."')");
+
+    $carrinho = $result[0];
+
+    $sql = new Sql();
+   
+    $sql -> query("CALL sp_carrinhosprodutostodos_rem(".$carrinho['id_car'].",".$id_prod.")");
+
+    echo json_encode(array(
+         "sucess"=>true
+    ));
+});
+$app->post("/carrinho-produto", function(){
+
+    $data=json_decode(file_get_contents("php://input"), true);
+    
+    $sql = new Sql();
+
+    $result = $sql -> select("CALL sp_carrinhos_get('".session_id()."')");
+
+    $carrinho = $result[0];
+
+    $sql = new Sql();
+   
+    $sql -> query("CALL sp_carrinhosprodutos_add(".$carrinho['id_car'].",".$data['id_prod'].")");
+
+    echo json_encode(array(
+         "sucess"=>true
+    ));
+});
+$app->delete("/carrinho-produto", function(){
+
+    $data=json_decode(file_get_contents("php://input"), true);
+    
+    $sql = new Sql();
+
+    $result = $sql -> select("CALL sp_carrinhos_get('".session_id()."')");
+
+    $carrinho = $result[0];
+
+    $sql = new Sql();
+   
+    $sql -> query("CALL sp_carrinhosprodutos_rem(".$carrinho['id_car'].",".$data['id_prod'].")");
+
+    echo json_encode(array(
+         "sucess"=>true
+    ));
+});
+
+$app-> get("/calcular-frete-:cep", function($cep){
+
+    require_once("inc/php-calcular-frete-correios/frete.php");
+
+    $frete = new Frete(
+        $cepDeOrigem ='40221080', 
+        $cepDeDestino = trim(str_replace('-', '', $cep)), 
+        $peso = 0.5, 
+        $comprimento = 4, 
+        $altura = 12, 
+        $largura = 16, 
+        $valor = 1.00
+    );
+
+    echo json_encode(array(
+        'valor_frete'=>$frete->getValor()
+    ));
 
 });
+
 $app->run();
+

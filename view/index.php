@@ -103,7 +103,7 @@
             <div class="text-center">
                 <div class="row row-max-400">
                     <div class="col-xs-6">
-                        <a href="#" class="btn btn-roxo">Shop</a>
+                        <a href="shop" class="btn btn-roxo">Shop</a>
                     </div>
                     <div class="col-xs-6">
                         <a href="#" class="btn btn-amarelo">Register</a>
